@@ -31,4 +31,16 @@ button_innerHTML = button.get_attribute("innerHTML")  # Get the text of the butt
 print("Inner HTML: \n"+ button_innerHTML)  # Print the button text
 print("Text of the button: " + button.text)  # Print text of the button
 
+
+firefox_browser.find_element(By.NAME, "search").send_keys("Selenium")  # Find the search input and type "Selenium"
+time.sleep(1)  # Wait for 1 seconds
+
+#firefox_browser.find_element(By.CLASS_NAME, "btn.btn-default.btn-lg").click()  # Click the search button with class name
+firefox_browser.find_element(By.CSS_SELECTOR, ".btn.btn-default.btn-lg").click()  # Click the search button with CSS selector
+
+time.sleep(2)  # Wait for 2 seconds
+
+firefox_browser.back()  # Go back to the previous page
+
+time.sleep(4)  # Wait for 4 seconds
 firefox_browser.quit()  # Close the browser after use
